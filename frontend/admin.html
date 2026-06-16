@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Painel Administrador</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Painel do Administrador</h1>
+
+        <div id="dashboard">
+
+            <p>Total Usuários: <span id="usuarios">0</span></p>
+
+            <p>Total Livros: <span id="livros">0</span></p>
+
+            <p>Total Auditorias: <span id="auditorias">0</span></p>
+
+            <p>Usuários Suspensos: <span id="suspensos">0</span></p>
+
+            <p>Usuários Banidos: <span id="banidos">0</span></p>
+
+        </div>
+
+        <hr>
+
+        <button onclick="location.href='usuarios.html'">
+            Gerenciar Usuários
+        </button>
+
+        <br><br>
+
+        <button onclick="location.href='livros.html'">
+            Gerenciar Livros
+        </button>
+
+        <br><br>
+
+        <button onclick="location.href='estatisticas.html'">
+            Estatísticas
+        </button>
+
+        <br><br>
+        
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+    <script src="js/proteger-admin.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/logout.js"></script>
+
+</body>
+</html>

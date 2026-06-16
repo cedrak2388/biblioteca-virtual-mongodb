@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Gerenciar Livros</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Gerenciar Livros</h1>
+
+<button onclick="abrirFormulario()">
+Novo Livro
+</button>
+
+<br><br>
+
+<input
+    type="text"
+    id="campoBusca"
+    placeholder="Pesquisar por título"
+>
+
+<input
+    type="text"
+    id="campoTag"
+    placeholder="Pesquisar por tag"
+>
+
+<button onclick="buscarPorTag()">
+    Buscar Tag
+</button>
+
+<br><br>
+
+<button onclick="buscarLivros()">
+    Buscar
+</button>
+
+<button onclick="carregarLivros()">
+    Mostrar Todos
+</button>
+
+<br><br>
+
+<table border="1" width="100%">
+
+<thead>
+
+<tr>
+
+<th>Título</th>
+<th>Autor</th>
+<th>Estoque</th>
+<th>Ações</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelaLivros">
+
+</tbody>
+
+</table>
+
+<br>
+
+<button onclick="voltar()">
+Voltar
+</button>
+
+</div>
+
+<script src="js/proteger-admin.js"></script>
+<script src="js/livros.js"></script>
+
+</body>
+</html>
