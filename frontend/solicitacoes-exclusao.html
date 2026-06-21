@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
 
-<title>Usuários</title>
+<title>Solicitações de Exclusão</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
@@ -38,12 +40,11 @@
             Estatísticas
         </button>
 
-        <button onclick="location.
-        href='solicitacoes-exclusao.html'">
+        <button onclick="location.href='solicitacoes-exclusao.html'">
             Exclusões
         </button>
-        
-        <button onclick="location.href='login.html'">
+
+        <button onclick="logout()">
             Logout
         </button>
 
@@ -51,44 +52,20 @@
 
 </div>
 
-<h1>Gerenciar Usuários</h1>
+<h1>
+Solicitações de Exclusão
+</h1>
 
-<table border="1" width="100%">
-
-<button onclick="window.location.href=
-'novo-usuario.html'">
-
-    Novo Usuário
-
-</button>
-
-<thead>
-
-<tr>
-
-<th>Nome</th>
-<th>Email</th>
-<th>Perfil</th>
-<th>Status</th>
-<th>Ações</th>
-
-</tr>
-
-</thead>
-
-<tbody id="tabelaUsuarios">
-
-</tbody>
-
-</table>
-
-<br>
+<div id="listaSolicitacoes">
+</div>
 
 </div>
 
 <script src="js/proteger-admin.js"></script>
-<script src="js/usuarios.js"></script>
 <script src="js/cabecalho-admin.js"></script>
+<script src="js/solicitacoes-exclusao.js"></script>
+<script src="js/logout.js"></script>
 
 </body>
+
 </html>

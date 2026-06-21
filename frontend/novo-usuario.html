@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Novo Usuário</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Novo Usuário</h1>
+
+<form id="formUsuario">
+
+<input
+type="text"
+id="nome"
+placeholder="Nome"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Email"
+required>
+
+<input
+type="password"
+id="senha"
+placeholder="Senha"
+required>
+
+<input
+type="text"
+id="telefone"
+placeholder="Telefone">
+
+<input
+type="text"
+id="endereco"
+placeholder="Endereço">
+
+<select id="perfil">
+
+<option value="leitor">
+Leitor
+</option>
+
+<option value="admin">
+Administrador
+</option>
+
+</select>
+
+<button type="submit">
+
+Cadastrar
+
+</button>
+
+</form>
+
+<br>
+
+<button
+onclick="
+window.location.href=
+'usuarios.html'
+">
+
+Voltar
+
+</button>
+
+</div>
+
+<script src="js/novo-usuario.js"></script>
+
+</body>
+</html>

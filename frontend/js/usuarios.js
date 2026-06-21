@@ -31,6 +31,14 @@ async function carregarUsuarios() {
                 <td>
 
                     <button
+                        onclick="editarUsuario('${usuario._id}')"
+                    >
+
+                        Editar
+
+                    </button>
+                
+                    <button
                         onclick="suspenderUsuario('${usuario._id}')"
                     >
                         Suspender
@@ -43,6 +51,12 @@ async function carregarUsuarios() {
                     </button>
 
                     <button
+                        onclick="reativarUsuario('${usuario._id}')"
+                    >
+                        Reativar
+                    </button>
+                    
+                    <button
                         onclick="excluirUsuario('${usuario._id}')"
                     >
                         Excluir
@@ -53,6 +67,13 @@ async function carregarUsuarios() {
             </tr>
         `;
     });
+
+}
+
+function editarUsuario(id) {
+
+    window.location.href =
+        `editar-usuario.html?id=${id}`;
 
 }
 
@@ -76,6 +97,27 @@ async function banirUsuario(id) {
         {
             method: "PUT"
         }
+    );
+
+    carregarUsuarios();
+
+}
+
+async function reativarUsuario(id) {
+
+    const resposta =
+        await fetch(
+            `http://localhost:3000/usuarios/reativar/${id}`,
+            {
+                method: "PUT"
+            }
+        );
+
+    const dados =
+        await resposta.json();
+
+    alert(
+        dados.mensagem
     );
 
     carregarUsuarios();

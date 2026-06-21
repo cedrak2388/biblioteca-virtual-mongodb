@@ -30,9 +30,37 @@ function preencherTabela(livros) {
 
         tabela.innerHTML += `
             <tr>
-                <td>${livro.titulo}</td>
-                <td>${livro.autor.nome}</td>
-                <td>${livro.estoque}</td>
+
+                <td>
+                    ${livro.titulo}
+                </td>
+
+                <td>
+                    ${livro.autor.nome}
+                </td>
+
+                <td>
+                    ${livro.isbn}
+                </td>
+
+                <td>
+                    ${livro.categorias.join(", ")}
+                </td>
+
+                <td>
+                    ${livro.disponiveis}
+                </td>
+
+                <td>
+                    ${livro.estoque}
+                </td>
+
+                <td>
+                    ${
+                        livro.estatisticas
+                        ?.mediaNotas || 0
+                    }
+                </td>
 
                 <td>
 
@@ -49,8 +77,10 @@ function preencherTabela(livros) {
                     </button>
 
                 </td>
+
             </tr>
         `;
+
     });
 
 }

@@ -79,3 +79,133 @@ table th {
 
     background: #efefef;
 }
+
+/* ===== DASHBOARD ADMIN ===== */
+
+.menu-admin {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+
+}
+
+.menu-admin button {
+
+    min-width: 160px;
+
+}
+
+#dashboard {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+}
+
+.card {
+
+    width: 220px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+.card h3 {
+
+    margin-top: 0;
+
+}
+
+.card p {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin: 10px 0 0 0;
+
+}
+
+/* ===== CABEÇALHO GLOBAL ===== */
+
+.topo-sistema {
+
+    background: #2c3e50;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+.topo-sistema h2 {
+
+    margin: 0;
+}
+
+.menu-sistema {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+.menu-sistema button {
+
+    background: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+#dashboardLeitor {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+
+}

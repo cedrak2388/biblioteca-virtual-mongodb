@@ -33,6 +33,33 @@ async function carregarDashboard() {
 
 }
 
+function carregarUsuarioLogado() {
+
+    const usuario =
+        JSON.parse(
+            localStorage.getItem(
+                "usuario"
+            )
+        );
+
+    document.getElementById(
+        "usuarioLogado"
+    ).innerHTML = `
+
+        <strong>
+            Bem-vindo,
+            ${usuario.nome}
+        </strong>
+
+        <br>
+
+        Perfil:
+        ${usuario.perfil}
+
+    `;
+
+}
+
 function logout() {
 
     window.location.href =
@@ -40,4 +67,5 @@ function logout() {
 
 }
 
+carregarUsuarioLogado();
 carregarDashboard();

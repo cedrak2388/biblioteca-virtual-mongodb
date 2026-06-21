@@ -13,41 +13,33 @@
 
     <div class="container">
 
-        <h1>Painel do Administrador</h1>
+    <div class="topo-sistema">
 
-        <div id="dashboard">
+    <h2>Biblioteca Virtual</h2>
 
-            <p>Total Usuários: <span id="usuarios">0</span></p>
+    <div id="usuarioLogado"></div>
 
-            <p>Total Livros: <span id="livros">0</span></p>
+    <div class="menu-sistema">
 
-            <p>Total Auditorias: <span id="auditorias">0</span></p>
-
-            <p>Usuários Suspensos: <span id="suspensos">0</span></p>
-
-            <p>Usuários Banidos: <span id="banidos">0</span></p>
-
-        </div>
-
-        <hr>
+        <button onclick="location.href='admin.html'">
+            Dashboard
+        </button>
 
         <button onclick="location.href='usuarios.html'">
-            Gerenciar Usuários
+            Usuários
         </button>
-
-        <br><br>
 
         <button onclick="location.href='livros.html'">
-            Gerenciar Livros
+            Livros
         </button>
-
-        <br><br>
 
         <button onclick="location.href='estatisticas.html'">
             Estatísticas
         </button>
 
-        <br><br>
+        <button onclick="location.href='solicitacoes-exclusao.html'">
+            Exclusões
+        </button>
         
         <button onclick="logout()">
             Logout
@@ -55,7 +47,45 @@
 
     </div>
 
+    </div>
+
+        <h1>Painel do Administrador</h1>
+
+        <hr>
+
+        <div id="dashboard">
+
+            <div class="card">
+                <h3>Usuários</h3>
+                <p id="usuarios">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Livros</h3>
+                <p id="livros">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Auditorias</h3>
+                <p id="auditorias">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Suspensos</h3>
+                <p id="suspensos">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Banidos</h3>
+                <p id="banidos">0</p>
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="js/proteger-admin.js"></script>
+    <script src="js/cabecalho-admin.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/logout.js"></script>
 

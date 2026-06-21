@@ -20,6 +20,34 @@ async function carregarLivro() {
         .value =
         livro.titulo;
 
+    document.getElementById("autorNome")
+        .value =
+        livro.autor.nome;
+
+    document.getElementById("autorPais")
+        .value =
+        livro.autor.pais;
+
+    document.getElementById("isbn")
+        .value =
+        livro.isbn;
+
+    document.getElementById("anoPublicacao")
+        .value =
+        livro.anoPublicacao;
+
+    document.getElementById("editora")
+        .value =
+        livro.editora;
+
+    document.getElementById("idioma")
+        .value =
+        livro.idioma;
+
+    document.getElementById("paginas")
+        .value =
+        livro.paginas;
+    
     document.getElementById("categorias")
         .value =
         livro.categorias.join(",");
@@ -60,19 +88,64 @@ document
                     body: JSON.stringify({
 
                         titulo:
-                            document.getElementById("titulo").value,
+                            document.getElementById(
+                                "titulo"
+                            ).value,
+
+                        autorNome:
+                            document.getElementById(
+                                "autorNome"
+                            ).value,
+
+                        autorPais:
+                            document.getElementById(
+                                "autorPais"
+                            ).value,
+
+                        isbn:
+                            document.getElementById(
+                                "isbn"
+                            ).value,
 
                         categorias:
-                            document.getElementById("categorias").value,
+                            document.getElementById(
+                                "categorias"
+                            ).value,
 
                         tags:
-                            document.getElementById("tags").value,
-
-                        estoque:
-                            document.getElementById("estoque").value,
+                            document.getElementById(
+                                "tags"
+                            ).value,
 
                         descricao:
-                            document.getElementById("descricao").value
+                            document.getElementById(
+                                "descricao"
+                            ).value,
+
+                        anoPublicacao:
+                            document.getElementById(
+                                "anoPublicacao"
+                            ).value,
+
+                        editora:
+                            document.getElementById(
+                                "editora"
+                            ).value,
+
+                        idioma:
+                            document.getElementById(
+                                "idioma"
+                            ).value,
+
+                        paginas:
+                            document.getElementById(
+                                "paginas"
+                            ).value,
+
+                        estoque:
+                            document.getElementById(
+                                "estoque"
+                            ).value
 
                     })
 

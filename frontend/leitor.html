@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
@@ -14,21 +15,91 @@
 
 <div class="container">
 
+    <div class="topo-sistema">
+
+    <h2>Biblioteca Virtual</h2>
+
+    <div id="usuarioLogado"></div>
+
+    <div class="menu-sistema">
+
+        <button
+            onclick="location.href='leitor.html'">
+            Início
+        </button>
+
+        <button
+            onclick="location.href='meu-perfil.html'">
+            Meu Perfil
+        </button>
+        
+        <button
+            onclick="location.href='meus-emprestimos.html'">
+            Empréstimos
+        </button>
+
+        <button
+            onclick="location.href='minhas-reservas.html'">
+            Reservas
+        </button>
+
+        <button
+            onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
 <h1>Painel do Leitor</h1>
 
-<div id="livros"></div>
+    <div id="dashboardLeitor">
 
-<br>
+    <div class="card">
+        <h3>Empréstimos</h3>
+        <p id="totalEmprestimos">0</p>
+    </div>
 
-<button onclick="logout()">
-Logout
-</button>
+    <div class="card">
+        <h3>Reservas</h3>
+        <p id="totalReservas">0</p>
+    </div>
+
+</div>
+
+<hr>
+
+    <button
+        onclick="window.location.href='meus-emprestimos.html'">
+        Meus Empréstimos
+    </button>
+
+    <button
+        onclick="window.location.href='minhas-reservas.html'">
+        Minhas Reservas
+    </button>
+
+    <hr>
+
+    <div id="livros"></div>
+
+    <br>
+
+    <button onclick="solicitarExclusao()">
+        Solicitar Exclusão
+    </button>
+    
+    <button onclick="logout()">
+        Logout
+    </button>
 
 </div>
 
 <script src="js/proteger-leitor.js"></script>
 <script src="js/leitor.js"></script>
 <script src="js/logout.js"></script>
+<script src="js/cabecalho-leitor.js"></script>
 
 </body>
 </html>

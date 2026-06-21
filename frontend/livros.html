@@ -14,6 +14,43 @@
 
 <div class="container">
 
+<div class="topo-sistema">
+
+    <h2>Biblioteca Virtual</h2>
+
+    <div id="usuarioLogado"></div>
+
+    <div class="menu-sistema">
+
+        <button onclick="location.href='admin.html'">
+            Dashboard
+        </button>
+
+        <button onclick="location.href='usuarios.html'">
+            Usuários
+        </button>
+
+        <button onclick="location.href='livros.html'">
+            Livros
+        </button>
+
+        <button onclick="location.href='estatisticas.html'">
+            Estatísticas
+        </button>
+
+        <button onclick="location.
+        href='solicitacoes-exclusao.html'">
+            Exclusões
+        </button>
+        
+        <button onclick="location.href='login.html'">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
 <h1>Gerenciar Livros</h1>
 
 <button onclick="abrirFormulario()">
@@ -57,8 +94,19 @@ Novo Livro
 <tr>
 
 <th>Título</th>
+
 <th>Autor</th>
+
+<th>ISBN</th>
+
+<th>Categorias</th>
+
+<th>Disponíveis</th>
+
 <th>Estoque</th>
+
+<th>Média</th>
+
 <th>Ações</th>
 
 </tr>
@@ -73,14 +121,11 @@ Novo Livro
 
 <br>
 
-<button onclick="voltar()">
-Voltar
-</button>
-
 </div>
 
 <script src="js/proteger-admin.js"></script>
 <script src="js/livros.js"></script>
+<script src="js/cabecalho-admin.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Editar Usuário</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Editar Usuário</h1>
+
+<form id="formEditar">
+
+<input
+type="text"
+id="nome"
+required>
+
+<input
+type="email"
+id="email"
+required>
+
+<input
+type="text"
+id="telefone">
+
+<input
+type="text"
+id="endereco">
+
+<select id="perfil">
+
+<option value="leitor">
+Leitor
+</option>
+
+<option value="admin">
+Administrador
+</option>
+
+</select>
+
+<select id="status">
+
+<option value="ativo">
+Ativo
+</option>
+
+<option value="suspenso">
+Suspenso
+</option>
+
+<option value="banido">
+Banido
+</option>
+
+</select>
+
+<button type="submit">
+
+Salvar
+
+</button>
+
+</form>
+
+<br>
+
+<button
+onclick="
+window.location.href=
+'usuarios.html'
+">
+
+Voltar
+
+</button>
+
+</div>
+
+<script src="js/editar-usuario.js"></script>
+
+</body>
+</html>
