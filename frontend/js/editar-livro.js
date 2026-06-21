@@ -16,6 +16,8 @@ async function carregarLivro() {
     const livro =
         await resposta.json();
 
+    console.log(livro);
+
     document.getElementById("titulo")
         .value =
         livro.titulo;
