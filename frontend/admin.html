@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="css/cards.css">
+
 </head>
 <body>
 
@@ -41,6 +43,10 @@
             Exclusões
         </button>
         
+        <button onclick="location.href='auditoria.html'">
+            Auditoria
+        </button>
+        
         <button onclick="logout()">
             Logout
         </button>
@@ -53,34 +59,54 @@
 
         <hr>
 
-        <div id="dashboard">
+        <div id="dashboard" class="cards-container">
 
-            <div class="card">
-                <h3>Usuários</h3>
-                <p id="usuarios">0</p>
-            </div>
-
-            <div class="card">
-                <h3>Livros</h3>
-                <p id="livros">0</p>
-            </div>
-
-            <div class="card">
-                <h3>Auditorias</h3>
-                <p id="auditorias">0</p>
-            </div>
-
-            <div class="card">
-                <h3>Suspensos</h3>
-                <p id="suspensos">0</p>
-            </div>
-
-            <div class="card">
-                <h3>Banidos</h3>
-                <p id="banidos">0</p>
-            </div>
-
+        <div class="card">
+            <h3>Total Usuários</h3>
+            <p id="usuarios">0</p>
         </div>
+
+        <div class="card">
+            <h3>Livros</h3>
+            <p id="livros">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Auditorias</h3>
+            <p id="auditorias">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Suspensos</h3>
+            <p id="suspensos">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Banidos</h3>
+            <p id="banidos">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Usuário Mais Ativo</h3>
+            <p id="usuarioAtivo">-</p>
+        </div>
+
+        <div class="card">
+            <h3>Empréstimos Ativos</h3>
+            <p id="emprestimosAtivos">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Reservas Ativas</h3>
+            <p id="reservasAtivas">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Livros Disponíveis</h3>
+            <p id="livrosDisponiveis">0</p>
+        </div>
+
+    </div>
 
     </div>
 

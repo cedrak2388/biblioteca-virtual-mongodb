@@ -25,6 +25,27 @@ async function carregarDashboard() {
         document.getElementById("banidos").innerText =
             dados.usuariosBanidos;
 
+        document.getElementById("emprestimosAtivos").innerText =
+            dados.emprestimosAtivos;
+
+        document.getElementById
+        ("reservasAtivas").innerText =
+            dados.reservasAtivas;
+
+        document.getElementById("livrosDisponiveis").innerText =
+            dados.livrosDisponiveis;
+
+        const respostaAtivo =
+            await fetch("http://localhost:3000/estatisticas/usuario-mais-ativo");
+
+        const usuarioAtivo =
+            await respostaAtivo.json();
+
+        document.getElementById("usuarioAtivo").innerText =
+            usuarioAtivo.nome
+            ? `${usuarioAtivo.nome} (${usuarioAtivo.score})`
+            : "Sem dados";
+
     } catch (erro) {
 
         console.error(erro);

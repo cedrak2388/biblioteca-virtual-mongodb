@@ -96,6 +96,80 @@ async function carregarReservas() {
 
 }
 
+async function carregarIndicadoresGerais() {
+
+    const respostaEmprestimos =
+        await fetch(
+            "http://localhost:3000/estatisticas/emprestimos"
+        );
+
+    const emprestimos =
+        await respostaEmprestimos.json();
+
+    document.getElementById(
+        "totalEmprestimos"
+    ).innerText =
+        emprestimos[0]?.total || 0;
+
+    const respostaDevolucoes =
+        await fetch(
+            "http://localhost:3000/estatisticas/devolucoes"
+        );
+
+    const devolucoes =
+        await respostaDevolucoes.json();
+
+    document.getElementById(
+        "totalDevolucoes"
+    ).innerText =
+        devolucoes.total || 0;
+
+    const respostaAvaliacoes =
+        await fetch(
+            "http://localhost:3000/estatisticas/total-avaliacoes"
+        );
+
+    const avaliacoes =
+        await respostaAvaliacoes.json();
+
+    document.getElementById(
+        "totalAvaliacoes"
+    ).innerText =
+        avaliacoes[0]?.total || 0;
+
+}
+
+async function carregarRankingLivros() {
+
+    const respostaEmp =
+        await fetch(
+            "http://localhost:3000/estatisticas/livro-mais-emprestado"
+        );
+
+    const maisEmprestado =
+        await respostaEmp.json();
+
+    document.getElementById(
+        "maisEmprestado"
+    ).innerHTML = maisEmprestado
+        ? `${maisEmprestado.titulo} (${maisEmprestado.totalEmprestimos})`
+        : "Nenhum dado";
+
+    const respostaRes =
+        await fetch(
+            "http://localhost:3000/estatisticas/livro-mais-reservado"
+        );
+
+    const maisReservado =
+        await respostaRes.json();
+
+    document.getElementById(
+        "maisReservado"
+    ).innerHTML = maisReservado
+        ? `${maisReservado.titulo} (${maisReservado.totalReservas})`
+        : "Nenhum dado";
+}
+
 function voltar() {
 
     window.location.href =
@@ -107,3 +181,5 @@ carregarCategorias();
 carregarAvaliacoes();
 carregarUsuarios();
 carregarReservas();
+carregarIndicadoresGerais();
+carregarRankingLivros();

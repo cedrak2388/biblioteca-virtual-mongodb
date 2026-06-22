@@ -95,10 +95,19 @@ async function cancelarReserva(
         await resposta.json();
 
     alert(
-        dados.mensagem
+    dados.mensagem
     );
 
     carregarReservas();
+
+    if (
+        typeof carregarDashboardLeitor
+        === "function"
+    ) {
+
+        carregarDashboardLeitor();
+
+    }
 
 }
 

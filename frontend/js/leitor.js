@@ -79,10 +79,12 @@ async function reservarLivro(id) {
         await resposta.json();
 
     alert(
-        dados.mensagem
+    dados.mensagem
     );
 
     carregarLivros();
+
+    carregarDashboardLeitor();
 
 }
 
@@ -116,10 +118,12 @@ async function emprestarLivro(id) {
         await resposta.json();
 
     alert(
-        dados.mensagem
+    dados.mensagem
     );
 
     carregarLivros();
+
+    carregarDashboardLeitor();
 
 }
 

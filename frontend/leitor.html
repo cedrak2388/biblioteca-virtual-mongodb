@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+    <meta charset="UTF-8">
+    <title>Painel do Leitor</title>
 
-<meta charset="UTF-8">
-
-<title>Painel do Leitor</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
 </head>
 
 <body>
@@ -17,68 +14,51 @@
 
     <div class="topo-sistema">
 
-    <h2>Biblioteca Virtual</h2>
+        <h2>Biblioteca Virtual</h2>
 
-    <div id="usuarioLogado"></div>
+        <div id="usuarioLogado"></div>
 
-    <div class="menu-sistema">
+        <div class="menu-sistema">
 
-        <button
-            onclick="location.href='leitor.html'">
-            Início
-        </button>
+            <button onclick="location.href='leitor.html'">
+                Início
+            </button>
 
-        <button
-            onclick="location.href='meu-perfil.html'">
-            Meu Perfil
-        </button>
-        
-        <button
-            onclick="location.href='meus-emprestimos.html'">
-            Empréstimos
-        </button>
+            <button onclick="location.href='meu-perfil.html'">
+                Meu Perfil
+            </button>
 
-        <button
-            onclick="location.href='minhas-reservas.html'">
-            Reservas
-        </button>
+            <button onclick="location.href='meus-emprestimos.html'">
+                Empréstimos
+            </button>
 
-        <button
-            onclick="logout()">
-            Logout
-        </button>
+            <button onclick="location.href='minhas-reservas.html'">
+                Reservas
+            </button>
+
+            <button onclick="logout()">
+                Logout
+            </button>
+
+        </div>
 
     </div>
 
-</div>
+    <h1>Painel do Leitor</h1>
 
-<h1>Painel do Leitor</h1>
+    <div id="dashboardLeitor" class="cards-container">
 
-    <div id="dashboardLeitor">
+        <div class="card">
+            <h3>Empréstimos</h3>
+            <p id="totalEmprestimos">0</p>
+        </div>
 
-    <div class="card">
-        <h3>Empréstimos</h3>
-        <p id="totalEmprestimos">0</p>
+        <div class="card">
+            <h3>Reservas</h3>
+            <p id="totalReservas">0</p>
+        </div>
+
     </div>
-
-    <div class="card">
-        <h3>Reservas</h3>
-        <p id="totalReservas">0</p>
-    </div>
-
-</div>
-
-<hr>
-
-    <button
-        onclick="window.location.href='meus-emprestimos.html'">
-        Meus Empréstimos
-    </button>
-
-    <button
-        onclick="window.location.href='minhas-reservas.html'">
-        Minhas Reservas
-    </button>
 
     <hr>
 
@@ -88,10 +68,6 @@
 
     <button onclick="solicitarExclusao()">
         Solicitar Exclusão
-    </button>
-    
-    <button onclick="logout()">
-        Logout
     </button>
 
 </div>

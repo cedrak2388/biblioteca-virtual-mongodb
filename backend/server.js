@@ -175,13 +175,9 @@ app.post("/cadastro", async (req, res) => {
             .insertOne(novoUsuario);
 
         await registrarAuditoria(
-
-            "CADASTRO_USUARIO",
-
+            "Cadastro Usuário",
             email,
-
-            `Novo usuário cadastrado: ${nome}`
-
+            nome
         );
 
         res.status(201).json({
@@ -230,12 +226,56 @@ app.get("/dashboard", async (req, res) => {
                 status: "banido"
             });
 
+        const livros =
+            await db.collection("livros")
+            .find()
+            .toArray();
+
+        let reservasAtivas = 0;
+
+        let emprestimosAtivos = 0;
+
+        let livrosDisponiveis = 0;
+
+        livros.forEach(livro => {
+
+            livrosDisponiveis +=
+                livro.disponiveis || 0;
+
+            reservasAtivas +=
+                (livro.reservas || [])
+                .filter(
+                    r => r.status === "ativa"
+                )
+                .length;
+
+            emprestimosAtivos +=
+                (livro.emprestimos || [])
+                .filter(
+                    e => e.status === "ativo"
+                )
+                .length;
+
+        });
+
         res.json({
+
             totalUsuarios,
+
             totalLivros,
+
             totalAuditorias,
+
             usuariosSuspensos,
-            usuariosBanidos
+
+            usuariosBanidos,
+
+            reservasAtivas,
+
+            emprestimosAtivos,
+
+            livrosDisponiveis
+
         });
 
     } catch (erro) {
@@ -243,7 +283,8 @@ app.get("/dashboard", async (req, res) => {
         console.error(erro);
 
         res.status(500).json({
-            mensagem: "Erro ao carregar dashboard."
+            mensagem:
+            "Erro ao carregar dashboard."
         });
 
     }
@@ -363,6 +404,12 @@ app.post("/livros", async (req, res) => {
             .collection("livros")
             .insertOne(novoLivro);
 
+        await registrarAuditoria(
+            "Cadastro Livro",
+            "admin",
+            novoLivro.titulo
+        );    
+        
         res.status(201).json({
             mensagem:
                 "Livro cadastrado com sucesso."
@@ -371,7 +418,7 @@ app.post("/livros", async (req, res) => {
     } catch (erro) {
 
         console.error(erro);
-
+        
         res.status(500).json({
             mensagem:
                 "Erro ao cadastrar livro."
@@ -389,11 +436,23 @@ app.delete("/livros/:id", async (req, res) => {
 
         const { id } = req.params;
 
+        const livro =
+        await db.collection("livros")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection("livros")
             .deleteOne({
                 _id: new ObjectId(id)
             });
 
+        await registrarAuditoria(
+            "Exclusão Livro",
+            "admin",
+            livro.titulo
+        );
+        
         res.json({
             mensagem: "Livro excluído com sucesso."
         });
@@ -612,6 +671,263 @@ app.get("/estatisticas/reservas", async (req, res) => {
 
 });
 
+app.get(
+"/estatisticas/emprestimos",
+async (req, res) => {
+
+    try {
+
+        const db = getDb();
+
+        const resultado =
+            await db.collection("livros")
+            .aggregate([
+                {
+                    $project: {
+                        totalEmprestimos: {
+                            $size: {
+                                $ifNull: [
+                                    "$emprestimos",
+                                    []
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    $group: {
+                        _id: null,
+                        total: {
+                            $sum:
+                            "$totalEmprestimos"
+                        }
+                    }
+                }
+            ])
+            .toArray();
+
+        res.json(resultado);
+
+    } catch (erro) {
+
+        res.status(500)
+        .json({
+            mensagem:
+            "Erro."
+        });
+
+    }
+
+});
+
+app.get(
+"/estatisticas/devolucoes",
+async (req, res) => {
+
+    try {
+
+        const db = getDb();
+
+        const livros =
+            await db.collection(
+                "livros"
+            ).find().toArray();
+
+        let total = 0;
+
+        livros.forEach(
+            livro => {
+
+                const devolvidos =
+                    livro.emprestimos
+                    ?.filter(
+                        e =>
+                        e.status ===
+                        "devolvido"
+                    )
+                    .length || 0;
+
+                total +=
+                    devolvidos;
+
+            }
+        );
+
+        res.json({
+            total
+        });
+
+    } catch (erro) {
+
+        res.status(500)
+        .json({
+            mensagem:
+            "Erro."
+        });
+
+    }
+
+});
+
+app.get(
+"/estatisticas/total-avaliacoes",
+async (req, res) => {
+
+    try {
+
+        const db = getDb();
+
+        const resultado =
+            await db.collection(
+                "livros"
+            )
+            .aggregate([
+                {
+                    $project: {
+                        totalAvaliacoes: {
+                            $size: {
+                                $ifNull: [
+                                    "$avaliacoes",
+                                    []
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    $group: {
+                        _id: null,
+                        total: {
+                            $sum:
+                            "$totalAvaliacoes"
+                        }
+                    }
+                }
+            ])
+            .toArray();
+
+        res.json(resultado);
+
+    } catch (erro) {
+
+        res.status(500)
+        .json({
+            mensagem:
+            "Erro."
+        });
+
+    }
+
+});
+
+app.get(
+"/estatisticas/livro-mais-emprestado",
+async (req, res) => {
+
+    try {
+
+        const db = getDb();
+
+        const resultado =
+            await db.collection("livros")
+            .aggregate([
+
+                {
+                    $project: {
+
+                        titulo: 1,
+
+                        totalEmprestimos: {
+                            $size: {
+                                $ifNull: [
+                                    "$emprestimos",
+                                    []
+                                ]
+                            }
+                        }
+
+                    }
+                },
+
+                {
+                    $sort: {
+                        totalEmprestimos: -1
+                    }
+                },
+
+                {
+                    $limit: 1
+                }
+
+            ])
+            .toArray();
+
+        res.json(resultado[0] || null);
+
+    } catch (erro) {
+
+        res.status(500).json({
+            mensagem: "Erro."
+        });
+
+    }
+
+});
+
+app.get(
+"/estatisticas/livro-mais-reservado",
+async (req, res) => {
+
+    try {
+
+        const db = getDb();
+
+        const resultado =
+            await db.collection("livros")
+            .aggregate([
+
+                {
+                    $project: {
+
+                        titulo: 1,
+
+                        totalReservas: {
+                            $size: {
+                                $ifNull: [
+                                    "$reservas",
+                                    []
+                                ]
+                            }
+                        }
+
+                    }
+                },
+
+                {
+                    $sort: {
+                        totalReservas: -1
+                    }
+                },
+
+                {
+                    $limit: 1
+                }
+
+            ])
+            .toArray();
+
+        res.json(resultado[0] || null);
+
+    } catch (erro) {
+
+        res.status(500).json({
+            mensagem: "Erro."
+        });
+
+    }
+
+});
+
 app.get("/usuarios", async (req, res) => {
 
     try {
@@ -644,6 +960,12 @@ app.put("/usuarios/suspender/:id", async (req, res) => {
 
         const db = getDb();
 
+        const usuario =
+        await db.collection("usuarios")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection("usuarios")
             .updateOne(
                 {
@@ -658,6 +980,12 @@ app.put("/usuarios/suspender/:id", async (req, res) => {
                 }
             );
 
+        await registrarAuditoria(
+            "Suspensão Usuário",
+            usuario.email,
+            usuario.nome
+        );
+        
         res.json({
             mensagem: "Usuário suspenso."
         });
@@ -678,6 +1006,12 @@ app.put("/usuarios/banir/:id", async (req, res) => {
 
         const db = getDb();
 
+        const usuario =
+        await db.collection("usuarios")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection("usuarios")
             .updateOne(
                 {
@@ -692,6 +1026,12 @@ app.put("/usuarios/banir/:id", async (req, res) => {
                 }
             );
 
+        await registrarAuditoria(
+            "Banimento Usuário",
+            usuario.email,
+            usuario.nome
+        );
+        
         res.json({
             mensagem: "Usuário banido."
         });
@@ -712,6 +1052,12 @@ app.delete("/usuarios/:id", async (req, res) => {
 
         const db = getDb();
 
+        const usuario =
+        await db.collection("usuarios")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection("usuarios")
             .deleteOne({
                 _id: new ObjectId(
@@ -719,6 +1065,12 @@ app.delete("/usuarios/:id", async (req, res) => {
                 )
             });
 
+        await registrarAuditoria(
+            "Exclusão Usuário",
+            usuario.email,
+            usuario.nome
+        );
+        
         res.json({
             mensagem:
                 "Usuário excluído."
@@ -980,6 +1332,12 @@ app.put("/livros/:id", async (req, res) => {
 
         } = req.body;
 
+        const livro =
+        await db.collection("livros")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection("livros")
         .updateOne(
             {
@@ -1044,6 +1402,12 @@ app.put("/livros/:id", async (req, res) => {
             }
         );
 
+        await registrarAuditoria(
+            "Edição Livro",
+            "admin",
+            livro.titulo
+        );
+        
         res.json({
 
             mensagem:
@@ -1179,13 +1543,9 @@ async (req, res) => {
 );
 
         await registrarAuditoria(
-
-            "Empréstimo",
-
+            "Empréstimo Livro",
             usuario.email,
-
             livro.titulo
-
         );
 
         res.json({
@@ -1390,13 +1750,9 @@ async (req, res) => {
         );
 
         await registrarAuditoria(
-
-            "Devolução",
-
+            "Devolução Livro",
             emprestimoAtivo.usuarioId,
-
             livro.titulo
-
         );
         
         res.json({
@@ -1466,6 +1822,12 @@ async (req, res) => {
 
         const db = getDb();
 
+        const usuario =
+        await db.collection("usuarios")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection(
             "usuarios"
         ).updateOne(
@@ -1482,6 +1844,12 @@ async (req, res) => {
             }
         );
 
+        await registrarAuditoria(
+            "Reativação Usuário",
+            usuario.email,
+            usuario.nome
+        );
+        
         res.json({
             mensagem:
             "Usuário reativado."
@@ -1566,6 +1934,12 @@ async (req, res) => {
             novoUsuario
         );
 
+        await registrarAuditoria(
+            "Cadastro Usuário",
+            novoUsuario.email,
+            novoUsuario.nome
+        );
+
         res.json({
             mensagem:
             "Usuário criado."
@@ -1632,6 +2006,12 @@ async (req, res) => {
 
         const db = getDb();
 
+        const usuario =
+        await db.collection("usuarios")
+        .findOne({
+            _id: new ObjectId(req.params.id)
+        });
+        
         await db.collection(
             "usuarios"
         ).updateOne(
@@ -1669,6 +2049,12 @@ async (req, res) => {
 
         );
 
+        await registrarAuditoria(
+            "Edição Usuário",
+            usuario.email,
+            usuario.nome
+        );
+        
         res.json({
 
             mensagem:
@@ -1719,14 +2105,18 @@ async (req, res) => {
             }
         );
 
+        const livro =
+        await db.collection("livros")
+        .findOne({
+            _id: new ObjectId(
+                req.params.livroId
+            )
+        });
+
         await registrarAuditoria(
-
             "Cancelamento Reserva",
-
-            usuario.email,
-
+            req.params.email,
             livro.titulo
-
         );
         
         res.json({
@@ -2029,6 +2419,98 @@ async (req, res) => {
         .json({
             mensagem:
             "Erro."
+        });
+
+    }
+
+});
+
+async function registrarAuditoria(acao, usuario, detalhe) {
+
+    const db = getDb();
+
+    await db.collection("auditoria").insertOne({
+
+        acao,
+        usuario,
+        detalhe,
+        data: new Date()
+
+    });
+
+}
+
+app.get("/auditoria", async (req, res) => {
+
+    const db = getDb();
+
+    const logs =
+        await db.collection("auditoria")
+        .find()
+        .sort({ data: -1 })
+        .limit(100)
+        .toArray();
+
+    res.json(logs);
+
+});
+
+app.get("/estatisticas/usuario-mais-ativo", async (req, res) => {
+
+    try {
+
+        const db = getDb();
+
+        const usuarios =
+            await db.collection("usuarios")
+            .find()
+            .toArray();
+
+        let usuarioMaisAtivo = null;
+        let maiorScore = 0;
+
+        usuarios.forEach(usuario => {
+
+            const emprestimos =
+                usuario.emprestimosAtivos?.length || 0;
+
+            const historico =
+                usuario.historicoEmprestimos?.length || 0;
+
+            const reservas =
+                usuario.reservas?.length || 0;
+
+            const avaliacoes =
+                usuario.avaliacoes?.length || 0;
+
+            // score de atividade
+            const score =
+                emprestimos +
+                historico;
+            
+            if (score > maiorScore) {
+
+                maiorScore = score;
+
+                usuarioMaisAtivo = {
+
+                    nome: usuario.nome,
+                    email: usuario.email,
+                    score
+                };
+
+            }
+
+        });
+
+        res.json(usuarioMaisAtivo || {});
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        res.status(500).json({
+            mensagem: "Erro."
         });
 
     }
