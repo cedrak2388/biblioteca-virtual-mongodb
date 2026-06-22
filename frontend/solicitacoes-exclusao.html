@@ -4,60 +4,51 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Solicitações de Exclusão</title>
 
-<link rel="stylesheet"
-href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="admin-layout">
 
-<div class="topo-sistema">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-    <h2>Biblioteca Virtual</h2>
+        <h2>📚 Biblioteca</h2>
 
-    <div id="usuarioLogado"></div>
+        <p id="usuarioLogado"></p>
 
-    <div class="menu-sistema">
+        <nav class="menu">
 
-        <button onclick="location.href='admin.html'">
-            Dashboard
-        </button>
+            <button onclick="location.href='admin.html'">Dashboard</button>
+            <button onclick="location.href='usuarios.html'">Usuários</button>
+            <button onclick="location.href='livros.html'">Livros</button>
+            <button onclick="location.href='estatisticas.html'">Estatísticas</button>
+            <button onclick="location.href='solicitacoes-exclusao.html'">Exclusões</button>
 
-        <button onclick="location.href='usuarios.html'">
-            Usuários
-        </button>
+            <button class="logout" onclick="logout()">Sair</button>
 
-        <button onclick="location.href='livros.html'">
-            Livros
-        </button>
+        </nav>
 
-        <button onclick="location.href='estatisticas.html'">
-            Estatísticas
-        </button>
+    </aside>
 
-        <button onclick="location.href='solicitacoes-exclusao.html'">
-            Exclusões
-        </button>
+    <!-- CONTEÚDO -->
+    <main class="main-content">
 
-        <button onclick="logout()">
-            Logout
-        </button>
+        <h1>🗑️ Solicitações de Exclusão</h1>
+        <p class="subtext">Pedidos de remoção de conta enviados por usuários</p>
 
-    </div>
+        <!-- LISTA -->
+        <div id="listaSolicitacoes" class="list-container"></div>
 
-</div>
-
-<h1>
-Solicitações de Exclusão
-</h1>
-
-<div id="listaSolicitacoes">
-</div>
+    </main>
 
 </div>
 

@@ -4,11 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Meu Perfil</title>
 
-<link rel="stylesheet"
-href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/cards.css">
 
@@ -16,51 +18,51 @@ href="css/style.css">
 
 <body>
 
-<div class="container">
+<div class="form-page">
 
-<h1>Meu Perfil</h1>
+    <div class="form-card">
 
-<form id="formPerfil">
+        <h1>👤 Meu Perfil</h1>
+        <p class="subtext">Atualize suas informações pessoais</p>
 
-<input
-type="text"
-id="nome"
-placeholder="Nome">
+        <form id="formPerfil">
 
-<input
-type="email"
-id="email"
-disabled>
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome completo"
+            >
 
-<input
-type="text"
-id="telefone"
-placeholder="Telefone">
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                disabled
+            >
 
-<input
-type="text"
-id="endereco"
-placeholder="Endereço">
+            <input
+                type="text"
+                id="telefone"
+                placeholder="Telefone"
+            >
 
-<button type="submit">
+            <input
+                type="text"
+                id="endereco"
+                placeholder="Endereço"
+            >
 
-Salvar
+            <button type="submit">
+                Salvar Alterações
+            </button>
 
-</button>
+        </form>
 
-</form>
+        <button class="secondary" onclick="window.location.href='leitor.html'">
+            Voltar
+        </button>
 
-<br>
-
-<button
-onclick="
-window.location.href=
-'leitor.html'
-">
-
-Voltar
-
-</button>
+    </div>
 
 </div>
 
@@ -69,3 +71,4 @@ Voltar
 </body>
 
 </html>
+

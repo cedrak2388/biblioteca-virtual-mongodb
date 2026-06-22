@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Novo Livro</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Novo Livro</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="form-page">
 
-    <h1>Cadastrar Livro</h1>
+    <div class="form-card">
 
-    <form id="livroForm">
+        <h1>📚 Cadastrar Livro</h1>
+        <p class="subtext">Adicione um novo livro ao acervo da biblioteca</p>
 
-        <input type="text" id="titulo" placeholder="Título" required>
+        <form id="livroForm">
 
-        <input type="text" id="autorNome" placeholder="Autor" required>
+            <div class="grid-2">
 
-        <input type="text" id="autorPais" placeholder="País do Autor" required>
+                <input type="text" id="titulo" placeholder="Título" required>
+                <input type="text" id="autorNome" placeholder="Autor" required>
 
-        <input type="text" id="isbn" placeholder="ISBN" required>
+                <input type="text" id="autorPais" placeholder="País do Autor" required>
+                <input type="text" id="isbn" placeholder="ISBN" required>
 
-        <input type="text" id="categorias"
-            placeholder="Fantasia,Aventura">
+                <input type="text" id="categorias" placeholder="Categorias (ex: Fantasia,Aventura)">
+                <input type="text" id="tags" placeholder="Tags (ex: dragão, magia)">
 
-        <input type="text" id="tags"
-            placeholder="aventura,fantasia,dragao">
+                <input type="number" id="anoPublicacao" placeholder="Ano de Publicação">
+                <input type="text" id="editora" placeholder="Editora">
 
-        <textarea
-            id="descricao"
-            placeholder="Descrição"
-            rows="4"
-            style="width:100%; margin-bottom:15px;"
-        ></textarea>
+                <input type="text" id="idioma" placeholder="Idioma">
+                <input type="number" id="paginas" placeholder="Número de Páginas">
 
-        <input type="number"
-            id="anoPublicacao"
-            placeholder="Ano de Publicação">
+                <input type="number" id="estoque" placeholder="Estoque">
 
-        <input type="text"
-            id="editora"
-            placeholder="Editora">
+            </div>
 
-        <input type="text"
-            id="idioma"
-            placeholder="Idioma">
+            <textarea
+                id="descricao"
+                placeholder="Descrição do livro"
+                rows="5"
+            ></textarea>
 
-        <input type="number"
-            id="paginas"
-            placeholder="Número de Páginas">
+            <button type="submit">
+                Salvar Livro
+            </button>
 
-        <input type="number"
-            id="estoque"
-            placeholder="Estoque">
+        </form>
 
-        <button type="submit">
-            Salvar Livro
+        <p id="mensagem"></p>
+
+        <button class="secondary" onclick="voltar()">
+            Voltar
         </button>
 
-    </form>
-
-    <p id="mensagem"></p>
-
-    <br>
-
-    <button onclick="voltar()">
-        Voltar
-    </button>
+    </div>
 
 </div>
 
 <script src="js/novo-livro.js"></script>
 
 </body>
+
 </html>

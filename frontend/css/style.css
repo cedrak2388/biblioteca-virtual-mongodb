@@ -123,6 +123,621 @@ table td {
     border-bottom: 1px solid #eee;
 }
 
-table tr:hover {
+
+/*login*/
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    height: 100vh;
+}
+
+/* Layout geral */
+.login-page {
+    display: flex;
+    height: 100vh;
+}
+
+/* Lado esquerdo */
+.login-left {
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.login-left h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.login-left p {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 400px;
+}
+
+/* Lado direito */
+.login-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.login-card h2 {
+    margin-bottom: 5px;
+}
+
+.subtext {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #1e3a8a;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* Links */
+.forgot {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: right;
+    color: #555;
+    text-decoration: none;
+}
+
+.register {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.register a {
+    color: #1e3a8a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*cadastro*/
+.auth-page {
+    display: flex;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+}
+
+/* Lado esquerdo */
+.auth-left {
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.auth-left h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.auth-left p {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 420px;
+}
+
+/* Lado direito */
+.auth-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.auth-card h2 {
+    margin-bottom: 5px;
+}
+
+.subtext {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #1e3a8a;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+/* Footer */
+.auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.auth-footer a {
+    color: #1e3a8a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*admin*/
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+}
+
+/* Layout geral */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Menu */
+.menu {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu button:hover {
+    background: #1e3a8a;
+}
+
+/* Logout */
+.logout {
+    margin-top: 20px;
+    background: #dc2626 !important;
+}
+
+/* Conteúdo */
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.subtext {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Dashboard cards */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #1e3a8a;
+}
+
+/*Livros*/
+.actions-bar {
+    margin-bottom: 20px;
+}
+
+.primary {
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.primary:hover {
+    background: #2563eb;
+}
+
+/* Barra de busca */
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Tabela moderna */
+.table-container {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: #0f172a;
+    color: white;
+    text-align: left;
+    padding: 12px;
+}
+
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.table tr:hover {
     background: #f8fafc;
+}
+
+/*Editar livro*/
+.form-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
+
+.form-card {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.form-card h1 {
+    margin-bottom: 5px;
+}
+
+.subtext {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Grid de inputs */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Inputs */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+input:focus, textarea:focus {
+    border-color: #1e3a8a;
+}
+
+/* textarea maior */
+textarea {
+    margin-top: 12px;
+    min-height: 100px;
+    resize: none;
+}
+
+/* Botão principal */
+button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #2563eb;
+}
+
+/* botão secundário */
+.secondary {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.secondary:hover {
+    background: #f3f4f6;
+}
+
+/*Editar usuario*/
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    background: white;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 12px;
+}
+
+select:focus {
+    border-color: #1e3a8a;
+}
+
+/*estatisticas*/
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.stats-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.stats-card h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #1e3a8a;
+}
+
+/* Estilo genérico para dados dinâmicos */
+.stats-card div {
+    font-size: 14px;
+    color: #333;
+}
+
+/* itens listados (caso JS insira listas) */
+.stats-card ul {
+    padding-left: 18px;
+}
+
+.stats-card li {
+    margin-bottom: 6px;
+}
+
+/*leitor*/
+.user-layout {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+}
+
+/* Botões extras */
+.primary {
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.primary:hover {
+    background: #2563eb;
+}
+
+/* botão perigoso */
+.danger {
+    background: #dc2626;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.danger:hover {
+    background: #ef4444;
+}
+
+/*meu perfil*/
+input:disabled {
+    background: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+/*meus emprestimos*/
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* cartão de item (para JS injetar conteúdo) */
+.emprestimo-item {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.emprestimo-item:hover {
+    transform: translateY(-3px);
+}
+
+/* status (caso JS use classes) */
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.status.ativo {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.atrasado {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status.finalizado {
+    background: #e0e7ff;
+    color: #1e3a8a;
 }

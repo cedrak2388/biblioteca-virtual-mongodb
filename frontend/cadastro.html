@@ -2,59 +2,77 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Biblioteca Virtual</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="container">
+    <div class="auth-page">
 
-        <h1>Cadastro de Usuário</h1>
+        <div class="auth-left">
+            <h1>📚 Biblioteca Virtual</h1>
+            <p>Crie sua conta para acessar livros, reservas e empréstimos de forma simples e organizada.</p>
+        </div>
 
-        <form id="cadastroForm">
+        <div class="auth-right">
 
-            <input
-                type="text"
-                id="nome"
-                placeholder="Nome"
-                required
-            >
+            <div class="auth-card">
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                required
-            >
+                <h2>Criar Conta</h2>
+                <p class="subtext">Preencha os dados abaixo</p>
 
-            <input
-                type="password"
-                id="senha"
-                placeholder="Senha"
-                required
-            >
+                <form id="cadastroForm">
 
-            <input
-                type="password"
-                id="confirmarSenha"
-                placeholder="Confirmar Senha"
-                required
-            >
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Nome completo"
+                        required
+                    >
 
-            <button type="submit">
-                Cadastrar
-            </button>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        required
+                    >
 
-        </form>
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Senha"
+                        required
+                    >
 
-        <p id="mensagem"></p>
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        placeholder="Confirmar senha"
+                        required
+                    >
 
-        <br>
+                    <button type="submit">
+                        Cadastrar
+                    </button>
 
-        <a href="login.html">
-            Voltar para Login
-        </a>
+                </form>
+
+                <p id="mensagem"></p>
+
+                <div class="auth-footer">
+                    <span>Já tem conta?</span>
+                    <a href="login.html">Entrar</a>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
