@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Usuários</title>
 
 <link rel="stylesheet" href="css/style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="admin-layout">
 
-<div class="topo-sistema">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-    <h2>Biblioteca Virtual</h2>
+        <h2>📚 Biblioteca</h2>
 
-    <div id="usuarioLogado"></div>
+        <p id="usuarioLogado"></p>
 
-    <div class="menu-sistema">
+        <nav class="menu">
 
-        <button onclick="location.href='admin.html'">
-            Dashboard
-        </button>
+            <button onclick="location.href='admin.html'">Dashboard</button>
+            <button onclick="location.href='usuarios.html'">Usuários</button>
+            <button onclick="location.href='livros.html'">Livros</button>
+            <button onclick="location.href='estatisticas.html'">Estatísticas</button>
+            <button onclick="location.href='solicitacoes-exclusao.html'">Exclusões</button>
 
-        <button onclick="location.href='usuarios.html'">
-            Usuários
-        </button>
+            <button class="logout" onclick="location.href='login.html'">Sair</button>
 
-        <button onclick="location.href='livros.html'">
-            Livros
-        </button>
+        </nav>
 
-        <button onclick="location.href='estatisticas.html'">
-            Estatísticas
-        </button>
+    </aside>
 
-        <button onclick="location.
-        href='solicitacoes-exclusao.html'">
-            Exclusões
-        </button>
-        
-        <button onclick="location.href='login.html'">
-            Logout
-        </button>
+    <!-- CONTEÚDO -->
+    <main class="main-content">
 
-    </div>
+        <h1>👥 Gerenciar Usuários</h1>
+        <p class="subtext">Controle de acesso e perfis do sistema</p>
 
-</div>
+        <!-- AÇÕES -->
+        <div class="actions-bar">
 
-<h1>Gerenciar Usuários</h1>
+            <button class="primary"
+                onclick="window.location.href='novo-usuario.html'">
+                + Novo Usuário
+            </button>
 
-<table border="1" width="100%">
+        </div>
 
-<button onclick="window.location.href=
-'novo-usuario.html'">
+        <!-- TABELA -->
+        <div class="table-container">
 
-    Novo Usuário
+            <table class="table">
 
-</button>
+                <thead>
 
-<thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Perfil</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
 
-<tr>
+                </thead>
 
-<th>Nome</th>
-<th>Email</th>
-<th>Perfil</th>
-<th>Status</th>
-<th>Ações</th>
+                <tbody id="tabelaUsuarios"></tbody>
 
-</tr>
+            </table>
 
-</thead>
+        </div>
 
-<tbody id="tabelaUsuarios">
-
-</tbody>
-
-</table>
-
-<br>
+    </main>
 
 </div>
 
@@ -91,4 +87,5 @@
 <script src="js/cabecalho-admin.js"></script>
 
 </body>
+
 </html>

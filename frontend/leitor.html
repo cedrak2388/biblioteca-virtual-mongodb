@@ -4,95 +4,89 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Painel do Leitor</title>
 
 <link rel="stylesheet" href="css/style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="user-layout">
 
-    <div class="topo-sistema">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-    <h2>Biblioteca Virtual</h2>
+        <h2>📚 Biblioteca</h2>
 
-    <div id="usuarioLogado"></div>
+        <p id="usuarioLogado"></p>
 
-    <div class="menu-sistema">
+        <nav class="menu">
 
-        <button
-            onclick="location.href='leitor.html'">
-            Início
+            <button onclick="location.href='leitor.html'">Início</button>
+            <button onclick="location.href='meu-perfil.html'">Meu Perfil</button>
+            <button onclick="location.href='meus-emprestimos.html'">Empréstimos</button>
+            <button onclick="location.href='minhas-reservas.html'">Reservas</button>
+
+            <button class="logout" onclick="logout()">Sair</button>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+
+        <h1>👋 Painel do Leitor</h1>
+        <p class="subtext">Bem-vindo ao seu espaço pessoal na biblioteca</p>
+
+        <!-- CARDS -->
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>📖 Empréstimos</h3>
+                <p id="totalEmprestimos">0</p>
+            </div>
+
+            <div class="card">
+                <h3>📌 Reservas</h3>
+                <p id="totalReservas">0</p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- AÇÕES -->
+        <div class="actions-bar">
+
+            <button class="primary" onclick="window.location.href='meus-emprestimos.html'">
+                Meus Empréstimos
+            </button>
+
+            <button class="primary" onclick="window.location.href='minhas-reservas.html'">
+                Minhas Reservas
+            </button>
+
+        </div>
+
+        <hr>
+
+        <!-- LISTA DE LIVROS -->
+        <div id="livros"></div>
+
+        <hr>
+
+        <!-- AÇÃO FINAL -->
+        <button class="danger" onclick="solicitarExclusao()">
+            Solicitar Exclusão de Conta
         </button>
 
-        <button
-            onclick="location.href='meu-perfil.html'">
-            Meu Perfil
-        </button>
-        
-        <button
-            onclick="location.href='meus-emprestimos.html'">
-            Empréstimos
-        </button>
-
-        <button
-            onclick="location.href='minhas-reservas.html'">
-            Reservas
-        </button>
-
-        <button
-            onclick="logout()">
-            Logout
-        </button>
-
-    </div>
-
-</div>
-
-<h1>Painel do Leitor</h1>
-
-    <div id="dashboardLeitor">
-
-    <div class="card">
-        <h3>Empréstimos</h3>
-        <p id="totalEmprestimos">0</p>
-    </div>
-
-    <div class="card">
-        <h3>Reservas</h3>
-        <p id="totalReservas">0</p>
-    </div>
-
-</div>
-
-<hr>
-
-    <button
-        onclick="window.location.href='meus-emprestimos.html'">
-        Meus Empréstimos
-    </button>
-
-    <button
-        onclick="window.location.href='minhas-reservas.html'">
-        Minhas Reservas
-    </button>
-
-    <hr>
-
-    <div id="livros"></div>
-
-    <br>
-
-    <button onclick="solicitarExclusao()">
-        Solicitar Exclusão
-    </button>
-    
-    <button onclick="logout()">
-        Logout
-    </button>
+    </main>
 
 </div>
 

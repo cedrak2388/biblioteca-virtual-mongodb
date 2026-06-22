@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
+<div class="admin-layout">
 
-    <div class="topo-sistema">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-    <h2>Biblioteca Virtual</h2>
+        <h2>📚 Biblioteca</h2>
 
-    <div id="usuarioLogado"></div>
+        <p id="usuarioLogado"></p>
 
-    <div class="menu-sistema">
+        <nav class="menu">
 
-        <button onclick="location.href='admin.html'">
-            Dashboard
-        </button>
+            <button onclick="location.href='admin.html'">Dashboard</button>
+            <button onclick="location.href='usuarios.html'">Usuários</button>
+            <button onclick="location.href='livros.html'">Livros</button>
+            <button onclick="location.href='estatisticas.html'">Estatísticas</button>
+            <button onclick="location.href='solicitacoes-exclusao.html'">Exclusões</button>
 
-        <button onclick="location.href='usuarios.html'">
-            Usuários
-        </button>
+            <button class="logout" onclick="location.href='login.html'">Sair</button>
 
-        <button onclick="location.href='livros.html'">
-            Livros
-        </button>
+        </nav>
 
-        <button onclick="location.href='estatisticas.html'">
-            Estatísticas
-        </button>
+    </aside>
 
-        <button onclick="location.
-        href='solicitacoes-exclusao.html'">
-            Exclusões
-        </button>
-        
-        <button onclick="location.href='login.html'">
-            Logout
-        </button>
+    <!-- CONTEÚDO -->
+    <main class="main-content">
 
-    </div>
+        <h1>📊 Estatísticas da Biblioteca</h1>
+        <p class="subtext">Análise geral do sistema</p>
 
-</div>
+        <!-- GRID PRINCIPAL -->
+        <div class="stats-grid">
 
-    <h1>Estatísticas da Biblioteca</h1>
+            <section class="stats-card">
+                <h3>📚 Livros por Categoria</h3>
+                <div id="categorias"></div>
+            </section>
 
-    <h3>Livros por Categoria</h3>
-    <div id="categorias"></div>
+            <section class="stats-card">
+                <h3>⭐ Top 5 Livros</h3>
+                <div id="avaliacoes"></div>
+            </section>
 
-    <hr>
+            <section class="stats-card">
+                <h3>👥 Usuários por Status</h3>
+                <div id="usuariosStatus"></div>
+            </section>
 
-    <h3>Top 5 Livros Mais Bem Avaliados</h3>
-    <div id="avaliacoes"></div>
+            <section class="stats-card">
+                <h3>📦 Total de Reservas</h3>
+                <div id="reservas"></div>
+            </section>
 
-    <hr>
+        </div>
 
-    <h3>Usuários por Status</h3>
-    <div id="usuariosStatus"></div>
-
-    <hr>
-
-    <h3>Total de Reservas</h3>
-    <div id="reservas"></div>
-
-    <br>
+    </main>
 
 </div>
 

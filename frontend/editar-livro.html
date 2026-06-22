@@ -4,94 +4,61 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Editar Livro</title>
 
 <link rel="stylesheet" href="css/style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="form-page">
 
-<h1>Editar Livro</h1>
+    <div class="form-card">
 
-<form id="formLivro">
+        <h1>✏️ Editar Livro</h1>
+        <p class="subtext">Atualize as informações do livro no sistema</p>
 
-<input
-type="text"
-id="titulo"
-placeholder="Título">
+        <form id="formLivro">
 
-<input
-type="text"
-id="autorNome"
-placeholder="Autor">
+            <div class="grid-2">
 
-<input
-type="text"
-id="autorPais"
-placeholder="País do Autor">
+                <input type="text" id="titulo" placeholder="Título">
+                <input type="text" id="autorNome" placeholder="Autor">
 
-<input
-type="text"
-id="isbn"
-placeholder="ISBN">
+                <input type="text" id="autorPais" placeholder="País do Autor">
+                <input type="text" id="isbn" placeholder="ISBN">
 
-<input
-type="text"
-id="categorias"
-placeholder="Categorias">
+                <input type="text" id="categorias" placeholder="Categorias">
+                <input type="text" id="tags" placeholder="Tags">
 
-<input
-type="text"
-id="tags"
-placeholder="Tags">
+                <input type="number" id="anoPublicacao" placeholder="Ano de Publicação">
+                <input type="text" id="editora" placeholder="Editora">
 
-<textarea
-id="descricao"
-placeholder="Descrição">
-</textarea>
+                <input type="text" id="idioma" placeholder="Idioma">
+                <input type="number" id="paginas" placeholder="Páginas">
 
-<input
-type="number"
-id="anoPublicacao"
-placeholder="Ano">
+                <input type="number" id="estoque" placeholder="Estoque">
 
-<input
-type="text"
-id="editora"
-placeholder="Editora">
+            </div>
 
-<input
-type="text"
-id="idioma"
-placeholder="Idioma">
+            <textarea id="descricao" placeholder="Descrição"></textarea>
 
-<input
-type="number"
-id="paginas"
-placeholder="Páginas">
+            <button type="submit">
+                Salvar Alterações
+            </button>
 
-<input
-type="number"
-id="estoque"
-placeholder="Estoque">
+        </form>
 
-<button type="submit">
-Salvar Alterações
-</button>
+        <button class="secondary" onclick="voltar()">
+            Voltar
+        </button>
 
-</form>
-
-<br>
-
-<button onclick="voltar()">
-
-Voltar
-
-</button>
+    </div>
 
 </div>
 

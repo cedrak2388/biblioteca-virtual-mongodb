@@ -4,86 +4,63 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Editar Usuário</title>
 
 <link rel="stylesheet" href="css/style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="form-page">
 
-<h1>Editar Usuário</h1>
+    <div class="form-card">
 
-<form id="formEditar">
+        <h1>👤 Editar Usuário</h1>
+        <p class="subtext">Atualize as informações do usuário no sistema</p>
 
-<input
-type="text"
-id="nome"
-required>
+        <form id="formEditar">
 
-<input
-type="email"
-id="email"
-required>
+            <div class="grid-2">
 
-<input
-type="text"
-id="telefone">
+                <input type="text" id="nome" placeholder="Nome completo" required>
+                <input type="email" id="email" placeholder="Email" required>
 
-<input
-type="text"
-id="endereco">
+                <input type="text" id="telefone" placeholder="Telefone">
+                <input type="text" id="endereco" placeholder="Endereço">
 
-<select id="perfil">
+            </div>
 
-<option value="leitor">
-Leitor
-</option>
+            <div class="grid-2">
 
-<option value="admin">
-Administrador
-</option>
+                <select id="perfil">
+                    <option value="leitor">Leitor</option>
+                    <option value="admin">Administrador</option>
+                </select>
 
-</select>
+                <select id="status">
+                    <option value="ativo">Ativo</option>
+                    <option value="suspenso">Suspenso</option>
+                    <option value="banido">Banido</option>
+                </select>
 
-<select id="status">
+            </div>
 
-<option value="ativo">
-Ativo
-</option>
+            <button type="submit">
+                Salvar Alterações
+            </button>
 
-<option value="suspenso">
-Suspenso
-</option>
+        </form>
 
-<option value="banido">
-Banido
-</option>
+        <button class="secondary" onclick="window.location.href='usuarios.html'">
+            Voltar
+        </button>
 
-</select>
-
-<button type="submit">
-
-Salvar
-
-</button>
-
-</form>
-
-<br>
-
-<button
-onclick="
-window.location.href=
-'usuarios.html'
-">
-
-Voltar
-
-</button>
+    </div>
 
 </div>
 

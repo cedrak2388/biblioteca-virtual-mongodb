@@ -6,44 +6,67 @@
     <title>Biblioteca Virtual</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <div class="cadastro-link">
-        <a href="cadastro.html">Cadastre-se</a>
-    </div>
+    <div class="login-page">
 
-    <div class="container">
+        <!-- Lado esquerdo (visual) -->
+        <div class="login-left">
+            <h1>📚 Biblioteca Virtual</h1>
+            <p>Organize, explore e gerencie sua biblioteca de forma simples e moderna.</p>
+        </div>
 
-        <h1>Biblioteca Virtual</h1>
+        <!-- Lado direito (formulário) -->
+        <div class="login-right">
 
-        <form id="loginForm">
+            <div class="login-card">
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                required
-            >
+                <h2>Entrar</h2>
 
-            <input
-                type="password"
-                id="senha"
-                placeholder="Senha"
-                required
-            >
+                <p class="subtext">Acesse sua conta</p>
 
-            <button type="submit">
-                Entrar
-            </button>
+                <form id="loginForm">
 
-        </form>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        required
+                    >
 
-        <a href="#">
-            Esqueceu sua senha?
-        </a>
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Senha"
+                        required
+                    >
 
-        <p id="mensagem"></p>
+                    <button type="submit">
+                        Entrar
+                    </button>
+
+                </form>
+
+                <a class="forgot" href="#">
+                    Esqueceu sua senha?
+                </a>
+
+                <div class="register">
+                    <span>Não tem conta?</span>
+                    <a href="cadastro.html">Cadastre-se</a>
+                </div>
+
+                <p id="mensagem"></p>
+
+            </div>
+
+        </div>
 
     </div>
 
