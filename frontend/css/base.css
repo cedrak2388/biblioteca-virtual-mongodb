@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --primary: #1e3a8a;
+    --primary-hover: #2563eb;
+    --dark: #0f172a;
+    --danger: #dc2626;
+    --light-bg: #f5f7fa;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1e3a8a;
+    --primary-hover: #2563eb;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --text: #334155;
+    --radius: 14px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}

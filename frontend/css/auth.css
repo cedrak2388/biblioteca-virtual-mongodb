@@ -1,0 +1,169 @@
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a
+    );
+}
+
+.auth-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.auth-left {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px;
+
+    color: white;
+}
+
+.brand {
+    max-width: 500px;
+}
+
+.brand h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.brand p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: .85;
+}
+
+.auth-right {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+
+    animation: fadeIn .5s ease;
+}
+
+.auth-card h2 {
+    margin-bottom: 8px;
+}
+
+.subtext {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.auth-card input {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    transition: .3s;
+}
+
+.auth-card input:focus {
+    outline: none;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.15);
+}
+
+.auth-card button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.auth-card button:hover {
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+}
+
+.auth-footer {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.auth-footer a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+#mensagem {
+    margin-top: 15px;
+    text-align: center;
+    font-size: .9rem;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@media(max-width: 900px) {
+
+    .auth-left {
+        display: none;
+    }
+
+    .auth-right {
+        padding: 20px;
+    }
+
+    .auth-card {
+        padding: 35px;
+    }
+
+}

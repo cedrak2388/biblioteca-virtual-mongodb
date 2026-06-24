@@ -17,35 +17,21 @@ async function carregarLivros() {
 
     livros.forEach(livro => {
 
-        div.innerHTML += `
-            <hr>
+        const html = livros.map(livro => `
+            <div class="card book-card">
+                <h3>${livro.titulo}</h3>
+                <p class="book-meta">📦 ${livro.disponiveis}</p>
 
-            <h3>${livro.titulo}</h3>
+                <div class="book-actions">
+                    <button class="primary" onclick="reservarLivro('${livro._id}')">Reservar</button>
+                    <button onclick="emprestarLivro('${livro._id}')">Emprestar</button>
+                    <button onclick="avaliarLivro('${livro._id}')">Avaliar</button>
+                </div>
+            </div>
+        `).join("");
 
-            <p>
-                Disponíveis:
-                ${livro.disponiveis}
-            </p>
-
-            <button
-            onclick="reservarLivro('${livro._id}')"
-            >
-                Reservar
-            </button>
-
-            <button
-            onclick="emprestarLivro('${livro._id}')"
-            >
-                Emprestar
-            </button>
-
-            <button
-            onclick="avaliarLivro('${livro._id}')"
-            >
-                Avaliar
-            </button>
-        `;
-    });
+        div.innerHTML = html;
+            });
 
 }
 

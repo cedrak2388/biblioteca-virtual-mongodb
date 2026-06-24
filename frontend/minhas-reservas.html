@@ -8,7 +8,8 @@
 
 <title>Minhas Reservas</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -18,32 +19,50 @@
 
 <div class="user-layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <h2>📚 Biblioteca</h2>
+        <div class="sidebar-header">
 
-        <p id="usuarioLogado"></p>
+            <h2>📚 Biblioteca</h2>
+
+            <p id="usuarioLogado"></p>
+
+        </div>
 
         <nav class="menu">
 
-            <button onclick="location.href='leitor.html'">Início</button>
-            <button onclick="location.href='meus-emprestimos.html'">Empréstimos</button>
-            <button onclick="location.href='minhas-reservas.html'">Reservas</button>
+            <button onclick="location.href='leitor.html'">
+                Início
+            </button>
 
-            <button class="logout" onclick="location.href='login.html'">Sair</button>
+            <button onclick="location.href='meus-emprestimos.html'">
+                Empréstimos
+            </button>
+
+            <button onclick="location.href='minhas-reservas.html'">
+                Reservas
+            </button>
+
+            <button class="logout" onclick="logout()">
+                Sair
+            </button>
 
         </nav>
 
     </aside>
 
-    <!-- CONTEÚDO -->
     <main class="main-content">
 
-        <h1>📌 Minhas Reservas</h1>
-        <p class="subtext">Histórico e status das suas reservas</p>
+        <div class="page-header">
 
-        <!-- LISTA DINÂMICA -->
+            <h1>📌 Minhas Reservas</h1>
+
+            <p class="subtext">
+                Histórico e status das suas reservas
+            </p>
+
+        </div>
+
         <div id="reservas" class="list-container"></div>
 
     </main>
@@ -52,7 +71,7 @@
 
 <script src="js/minhas-reservas.js"></script>
 <script src="js/cabecalho-leitor.js"></script>
+<script src="js/logout.js"></script>
 
 </body>
-
 </html>

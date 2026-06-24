@@ -8,7 +8,9 @@
 
 <title>Editar Usuário</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/forms.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -20,8 +22,15 @@
 
     <div class="form-card">
 
-        <h1>👤 Editar Usuário</h1>
-        <p class="subtext">Atualize as informações do usuário no sistema</p>
+        <div class="form-header">
+
+            <h1>👤 Editar Usuário</h1>
+
+            <p class="subtext">
+                Atualize as informações do usuário no sistema
+            </p>
+
+        </div>
 
         <form id="formEditar">
 
@@ -38,14 +47,18 @@
             <div class="grid-2">
 
                 <select id="perfil">
+
                     <option value="leitor">Leitor</option>
                     <option value="admin">Administrador</option>
+
                 </select>
 
                 <select id="status">
+
                     <option value="ativo">Ativo</option>
                     <option value="suspenso">Suspenso</option>
                     <option value="banido">Banido</option>
+
                 </select>
 
             </div>
@@ -56,8 +69,12 @@
 
         </form>
 
-        <button class="secondary" onclick="window.location.href='usuarios.html'">
+        <button
+            class="secondary"
+            onclick="window.location.href='usuarios.html'">
+
             Voltar
+
         </button>
 
     </div>
@@ -67,4 +84,5 @@
 <script src="js/editar-usuario.js"></script>
 
 </body>
+
 </html>

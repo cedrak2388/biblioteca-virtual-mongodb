@@ -8,7 +8,9 @@
 
 <title>Novo Livro</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/forms.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -20,8 +22,15 @@
 
     <div class="form-card">
 
-        <h1>📚 Cadastrar Livro</h1>
-        <p class="subtext">Adicione um novo livro ao acervo da biblioteca</p>
+        <div class="form-header">
+
+            <h1>📚 Cadastrar Livro</h1>
+
+            <p class="subtext">
+                Adicione um novo livro ao acervo da biblioteca
+            </p>
+
+        </div>
 
         <form id="livroForm">
 
@@ -49,8 +58,8 @@
             <textarea
                 id="descricao"
                 placeholder="Descrição do livro"
-                rows="5"
-            ></textarea>
+                rows="5">
+            </textarea>
 
             <button type="submit">
                 Salvar Livro
@@ -60,8 +69,12 @@
 
         <p id="mensagem"></p>
 
-        <button class="secondary" onclick="voltar()">
+        <button
+            class="secondary"
+            onclick="voltar()">
+
             Voltar
+
         </button>
 
     </div>

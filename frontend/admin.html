@@ -1,119 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Painel Administrador</title>
+<title>Painel Administrativo</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
 
-    <link rel="stylesheet" href="css/cards.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
-    <div class="container">
+<div class="admin-layout">
 
-    <div class="topo-sistema">
+    <aside class="sidebar">
 
-    <h2>Biblioteca Virtual</h2>
+        <div class="sidebar-header">
 
-    <div id="usuarioLogado"></div>
+            <h2>📚 Biblioteca</h2>
 
-    <div class="menu-sistema">
+            <p id="usuarioLogado"></p>
 
-        <button onclick="location.href='admin.html'">
-            Dashboard
-        </button>
-
-        <button onclick="location.href='usuarios.html'">
-            Usuários
-        </button>
-
-        <button onclick="location.href='livros.html'">
-            Livros
-        </button>
-
-        <button onclick="location.href='estatisticas.html'">
-            Estatísticas
-        </button>
-
-        <button onclick="location.href='solicitacoes-exclusao.html'">
-            Exclusões
-        </button>
-        
-        <button onclick="location.href='auditoria.html'">
-            Auditoria
-        </button>
-        
-        <button onclick="logout()">
-            Logout
-        </button>
-
-    </div>
-
-    </div>
-
-        <h1>Painel do Administrador</h1>
-
-        <hr>
-
-        <div id="dashboard" class="cards-container">
-
-        <div class="card">
-            <h3>Total Usuários</h3>
-            <p id="usuarios">0</p>
         </div>
 
-        <div class="card">
-            <h3>Livros</h3>
-            <p id="livros">0</p>
+        <nav class="menu">
+
+            <button onclick="location.href='admin.html'">
+                Dashboard
+            </button>
+
+            <button onclick="location.href='usuarios.html'">
+                Usuários
+            </button>
+
+            <button onclick="location.href='livros.html'">
+                Livros
+            </button>
+
+            <button onclick="location.href='estatisticas.html'">
+                Estatísticas
+            </button>
+
+            <button onclick="location.href='solicitacoes-exclusao.html'">
+                Exclusões
+            </button>
+
+            <button onclick="location.href='auditoria.html'">
+                Auditoria
+            </button>
+
+            <button class="logout" onclick="logout()">
+                Sair
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <h1>📊 Painel Administrativo</h1>
+
+            <p class="subtext">
+                Visão geral do sistema
+            </p>
+
         </div>
 
-        <div class="card">
-            <h3>Auditorias</h3>
-            <p id="auditorias">0</p>
+        <div id="dashboard" class="cards-grid">
+
+            <div class="card">
+                <h3>Usuários</h3>
+                <p id="usuarios">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Livros</h3>
+                <p id="livros">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Auditorias</h3>
+                <p id="auditorias">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Suspensos</h3>
+                <p id="suspensos">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Banidos</h3>
+                <p id="banidos">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Usuário Mais Ativo</h3>
+                <p id="usuarioAtivo">-</p>
+            </div>
+
+            <div class="card">
+                <h3>Empréstimos</h3>
+                <p id="emprestimosAtivos">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Reservas</h3>
+                <p id="reservasAtivas">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Disponíveis</h3>
+                <p id="livrosDisponiveis">0</p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Suspensos</h3>
-            <p id="suspensos">0</p>
-        </div>
+    </main>
 
-        <div class="card">
-            <h3>Banidos</h3>
-            <p id="banidos">0</p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>Usuário Mais Ativo</h3>
-            <p id="usuarioAtivo">-</p>
-        </div>
-
-        <div class="card">
-            <h3>Empréstimos Ativos</h3>
-            <p id="emprestimosAtivos">0</p>
-        </div>
-
-        <div class="card">
-            <h3>Reservas Ativas</h3>
-            <p id="reservasAtivas">0</p>
-        </div>
-
-        <div class="card">
-            <h3>Livros Disponíveis</h3>
-            <p id="livrosDisponiveis">0</p>
-        </div>
-
-    </div>
-
-    </div>
-
-    <script src="js/proteger-admin.js"></script>
-    <script src="js/cabecalho-admin.js"></script>
-    <script src="js/admin.js"></script>
-    <script src="js/logout.js"></script>
+<script src="js/proteger-admin.js"></script>
+<script src="js/cabecalho-admin.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/logout.js"></script>
 
 </body>
 </html>

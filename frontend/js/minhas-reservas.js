@@ -34,29 +34,29 @@ async function carregarReservas() {
 
         div.innerHTML += `
 
-            <hr>
+        <div class="card book-card">
 
-            <h3>
-                ${livro.titulo}
-            </h3>
+            <h3>${livro.titulo}</h3>
 
-            <p>
-                Reservado em:
+            <p class="book-meta">
+                📌 Reservado em:
                 ${new Date(
                     reserva.dataReserva
                 ).toLocaleDateString()}
             </p>
 
-            <button
-                onclick="
-                cancelarReserva(
-                    '${livro._id}'
-                )"
-            >
+            <div class="book-actions">
 
-                Cancelar Reserva
+                <button
+                    class="sys-btn sys-btn-danger"
+                    onclick="cancelarReserva('${livro._id}')"
+                >
+                    Cancelar Reserva
+                </button>
 
-            </button>
+            </div>
+
+        </div>
 
         `;
 

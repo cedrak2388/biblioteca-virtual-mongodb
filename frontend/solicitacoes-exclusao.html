@@ -8,7 +8,9 @@
 
 <title>Solicitações de Exclusão</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/lists.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -18,34 +20,58 @@
 
 <div class="admin-layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <h2>📚 Biblioteca</h2>
+        <div class="sidebar-header">
 
-        <p id="usuarioLogado"></p>
+            <h2>📚 Biblioteca</h2>
+
+            <p id="usuarioLogado"></p>
+
+        </div>
 
         <nav class="menu">
 
-            <button onclick="location.href='admin.html'">Dashboard</button>
-            <button onclick="location.href='usuarios.html'">Usuários</button>
-            <button onclick="location.href='livros.html'">Livros</button>
-            <button onclick="location.href='estatisticas.html'">Estatísticas</button>
-            <button onclick="location.href='solicitacoes-exclusao.html'">Exclusões</button>
+            <button onclick="location.href='admin.html'">
+                Dashboard
+            </button>
 
-            <button class="logout" onclick="logout()">Sair</button>
+            <button onclick="location.href='usuarios.html'">
+                Usuários
+            </button>
+
+            <button onclick="location.href='livros.html'">
+                Livros
+            </button>
+
+            <button onclick="location.href='estatisticas.html'">
+                Estatísticas
+            </button>
+
+            <button onclick="location.href='solicitacoes-exclusao.html'">
+                Exclusões
+            </button>
+
+            <button class="logout" onclick="logout()">
+                Sair
+            </button>
 
         </nav>
 
     </aside>
 
-    <!-- CONTEÚDO -->
     <main class="main-content">
 
-        <h1>🗑️ Solicitações de Exclusão</h1>
-        <p class="subtext">Pedidos de remoção de conta enviados por usuários</p>
+        <div class="page-header">
 
-        <!-- LISTA -->
+            <h1>🗑️ Solicitações de Exclusão</h1>
+
+            <p class="subtext">
+                Pedidos de remoção de conta enviados por usuários
+            </p>
+
+        </div>
+
         <div id="listaSolicitacoes" class="list-container"></div>
 
     </main>

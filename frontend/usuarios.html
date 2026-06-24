@@ -3,14 +3,16 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Usuários</title>
+    <title>Gerenciar Usuários</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/tables.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -18,44 +20,74 @@
 
 <div class="admin-layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <h2>📚 Biblioteca</h2>
+        <div class="sidebar-header">
 
-        <p id="usuarioLogado"></p>
+            <h2>📚 Biblioteca</h2>
+
+            <p id="usuarioLogado"></p>
+
+        </div>
 
         <nav class="menu">
 
-            <button onclick="location.href='admin.html'">Dashboard</button>
-            <button onclick="location.href='usuarios.html'">Usuários</button>
-            <button onclick="location.href='livros.html'">Livros</button>
-            <button onclick="location.href='estatisticas.html'">Estatísticas</button>
-            <button onclick="location.href='solicitacoes-exclusao.html'">Exclusões</button>
+            <button onclick="location.href='admin.html'">
+                Dashboard
+            </button>
 
-            <button class="logout" onclick="location.href='login.html'">Sair</button>
+            <button onclick="location.href='usuarios.html'">
+                Usuários
+            </button>
+
+            <button onclick="location.href='livros.html'">
+                Livros
+            </button>
+
+            <button onclick="location.href='estatisticas.html'">
+                Estatísticas
+            </button>
+
+            <button onclick="location.href='auditoria.html'">
+                Auditoria
+            </button>
+
+            <button onclick="location.href='solicitacoes-exclusao.html'">
+                Exclusões
+            </button>
+
+            <button class="logout" onclick="location.href='login.html'">
+                Sair
+            </button>
 
         </nav>
 
     </aside>
 
-    <!-- CONTEÚDO -->
     <main class="main-content">
 
-        <h1>👥 Gerenciar Usuários</h1>
-        <p class="subtext">Controle de acesso e perfis do sistema</p>
+        <div class="page-header">
 
-        <!-- AÇÕES -->
+            <h1>👥 Gerenciar Usuários</h1>
+
+            <p class="subtext">
+                Controle de acesso e perfis do sistema
+            </p>
+
+        </div>
+
         <div class="actions-bar">
 
-            <button class="primary"
+            <button
+                class="primary"
                 onclick="window.location.href='novo-usuario.html'">
+
                 + Novo Usuário
+
             </button>
 
         </div>
 
-        <!-- TABELA -->
         <div class="table-container">
 
             <table class="table">
@@ -87,5 +119,4 @@
 <script src="js/cabecalho-admin.js"></script>
 
 </body>
-
 </html>

@@ -32,35 +32,35 @@ async function carregarEmprestimos() {
 
         div.innerHTML += `
 
-            <hr>
+        <div class="card book-card">
 
-            <h3>
-                ${livro.titulo}
-            </h3>
+            <h3>${livro.titulo}</h3>
 
-            <p>
-                Empréstimo:
+            <p class="book-meta">
+                📅 Empréstimo:
                 ${new Date(
                     emprestimo.dataEmprestimo
                 ).toLocaleDateString()}
             </p>
 
-            <p>
-                Devolver até:
+            <p class="book-meta">
+                ⏰ Devolver até:
                 ${new Date(
                     emprestimo.dataPrevistaDevolucao
                 ).toLocaleDateString()}
             </p>
 
-            <button
-            onclick="
-            devolverLivro(
-            '${livro._id}'
-            )">
+            <div class="book-actions">
 
-            Devolver
+                <button
+                    class="primary"
+                    onclick="devolverLivro('${livro._id}')">
+                    Devolver
+                </button>
 
-            </button>
+            </div>
+
+        </div>
 
         `;
 

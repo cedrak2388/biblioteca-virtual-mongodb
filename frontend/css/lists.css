@@ -1,0 +1,178 @@
+/* Container de listas dinâmicas */
+
+.list-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+/* Card padrão de item dinâmico */
+
+.list-item {
+    background: white;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.05);
+
+    transition: .2s;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.list-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Conteúdo interno */
+
+.list-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+/* título principal */
+
+.list-title {
+    font-weight: 600;
+
+    color: #0f172a;
+}
+
+/* subtítulo / descrição */
+
+.list-sub {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+/* área de ações */
+
+.list-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+/* botão pequeno padrão */
+
+.btn-small {
+    padding: 8px 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-danger {
+    background: #ef4444;
+
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-primary {
+    background: #1e3a8a;
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.sys-btn-danger:hover {
+    background: #b91c1c !important;
+}
+
+.sys-btn {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.sys-btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.sys-btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.sys-btn-danger:hover {
+    background: #b91c1c;
+}
+
+.sys-btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.sys-btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.sys-btn {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s;
+}
+
+/* PRIMARY */
+.sys-btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.sys-btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+/* DANGER */
+.sys-btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.sys-btn-danger:hover {
+    background: #b91c1c;
+}
+
+/* SECONDARY */
+.sys-btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.sys-btn-secondary:hover {
+    background: #cbd5e1;
+}

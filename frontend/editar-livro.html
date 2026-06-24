@@ -8,7 +8,9 @@
 
 <title>Editar Livro</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/forms.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -20,8 +22,15 @@
 
     <div class="form-card">
 
-        <h1>✏️ Editar Livro</h1>
-        <p class="subtext">Atualize as informações do livro no sistema</p>
+        <div class="form-header">
+
+            <h1>✏️ Editar Livro</h1>
+
+            <p class="subtext">
+                Atualize as informações do livro no sistema
+            </p>
+
+        </div>
 
         <form id="formLivro">
 
@@ -46,7 +55,11 @@
 
             </div>
 
-            <textarea id="descricao" placeholder="Descrição"></textarea>
+            <textarea
+                id="descricao"
+                placeholder="Descrição do livro"
+                rows="5">
+            </textarea>
 
             <button type="submit">
                 Salvar Alterações
@@ -54,8 +67,12 @@
 
         </form>
 
-        <button class="secondary" onclick="voltar()">
+        <button
+            class="secondary"
+            onclick="voltar()">
+
             Voltar
+
         </button>
 
     </div>
@@ -65,4 +82,5 @@
 <script src="js/editar-livro.js"></script>
 
 </body>
+
 </html>

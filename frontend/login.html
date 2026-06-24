@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Biblioteca Virtual</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
     <div class="login-page">
 
-        <!-- Lado esquerdo (visual) -->
         <div class="login-left">
-            <h1>📚 Biblioteca Virtual</h1>
-            <p>Organize, explore e gerencie sua biblioteca de forma simples e moderna.</p>
+
+            <div class="brand">
+                <h1>📚 Biblioteca Virtual</h1>
+
+                <p>
+                    Organize, explore e gerencie sua biblioteca de forma simples,
+                    moderna e eficiente.
+                </p>
+            </div>
+
         </div>
 
-        <!-- Lado direito (formulário) -->
         <div class="login-right">
 
             <div class="login-card">
 
-                <h2>Entrar</h2>
+                <h2>Bem-vindo</h2>
 
-                <p class="subtext">Acesse sua conta</p>
+                <p class="subtext">
+                    Faça login para continuar
+                </p>
 
                 <form id="loginForm">
 
                     <input
                         type="email"
                         id="email"
-                        placeholder="Email"
+                        placeholder="Digite seu e-mail"
                         required
                     >
 
                     <input
                         type="password"
                         id="senha"
-                        placeholder="Senha"
+                        placeholder="Digite sua senha"
                         required
                     >
 
@@ -53,13 +62,15 @@
 
                 </form>
 
-                <a class="forgot" href="#">
+                <a href="#" class="forgot">
                     Esqueceu sua senha?
                 </a>
 
                 <div class="register">
-                    <span>Não tem conta?</span>
-                    <a href="cadastro.html">Cadastre-se</a>
+                    <span>Não possui conta?</span>
+                    <a href="cadastro.html">
+                        Cadastre-se
+                    </a>
                 </div>
 
                 <p id="mensagem"></p>
@@ -73,4 +84,5 @@
     <script src="js/login.js"></script>
 
 </body>
+
 </html>

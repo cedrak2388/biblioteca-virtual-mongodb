@@ -19,38 +19,31 @@ async function carregarSolicitacoes() {
         usuario => {
 
         div.innerHTML += `
+        <div class="sys-card">
 
-            <hr>
+            <h3>${usuario.nome}</h3>
 
-            <h3>
-                ${usuario.nome}
-            </h3>
+            <p class="sys-meta">${usuario.email}</p>
 
-            <p>
-                ${usuario.email}
-            </p>
-
-            <p>
-                Motivo:
+            <p class="sys-meta">
                 ${usuario.solicitacaoExclusao.motivo}
             </p>
 
-            <button
-            onclick="
-            aprovarExclusao(
-            '${usuario._id}'
-            )">
-            Aprovar Exclusão
-            </button>
+            <div class="sys-actions">
 
-            <button
-            onclick="
-            rejeitarExclusao(
-            '${usuario._id}'
-            )">
-            Rejeitar
-            </button>
+                <button class="sys-btn sys-btn-primary"
+                    onclick="aprovarExclusao('${usuario._id}')">
+                    Aprovar
+                </button>
 
+                <button class="sys-btn sys-btn-danger"
+                    onclick="rejeitarExclusao('${usuario._id}')">
+                    Rejeitar
+                </button>
+
+            </div>
+
+        </div>
         `;
 
     });

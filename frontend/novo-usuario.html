@@ -8,7 +8,9 @@
 
 <title>Novo Usuário</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/forms.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -20,8 +22,15 @@
 
     <div class="form-card">
 
-        <h1>👤 Novo Usuário</h1>
-        <p class="subtext">Crie um novo usuário no sistema</p>
+        <div class="form-header">
+
+            <h1>👤 Novo Usuário</h1>
+
+            <p class="subtext">
+                Crie um novo usuário no sistema
+            </p>
+
+        </div>
 
         <form id="formUsuario">
 
@@ -48,8 +57,12 @@
 
         </form>
 
-        <button class="secondary" onclick="window.location.href='usuarios.html'">
+        <button
+            class="secondary"
+            onclick="window.location.href='usuarios.html'">
+
             Voltar
+
         </button>
 
     </div>

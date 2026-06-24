@@ -1,13 +1,92 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<h1>Auditoria do Sistema</h1>
+<head>
 
-<div id="logs"></div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<button onclick="voltar()">
-Voltar
-</button>
+<title>Auditoria do Sistema</title>
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/lists.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <h2>📚 Biblioteca</h2>
+
+            <p id="usuarioLogado"></p>
+
+        </div>
+
+        <nav class="menu">
+
+            <button onclick="location.href='admin.html'">
+                Dashboard
+            </button>
+
+            <button onclick="location.href='usuarios.html'">
+                Usuários
+            </button>
+
+            <button onclick="location.href='livros.html'">
+                Livros
+            </button>
+
+            <button onclick="location.href='estatisticas.html'">
+                Estatísticas
+            </button>
+
+            <button onclick="location.href='auditoria.html'">
+                Auditoria
+            </button>
+
+            <button onclick="location.href='solicitacoes-exclusao.html'">
+                Exclusões
+            </button>
+
+            <button class="logout" onclick="logout()">
+                Sair
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <h1>📊 Auditoria do Sistema</h1>
+
+            <p class="subtext">
+                Histórico de ações realizadas na plataforma
+            </p>
+
+        </div>
+
+        <div id="logs" class="list-container"></div>
+
+    </main>
 
 </div>
 
+<script src="js/proteger-admin.js"></script>
+<script src="js/cabecalho-admin.js"></script>
 <script src="js/auditoria.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+
+</html>

@@ -2,25 +2,33 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatísticas</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Estatísticas</title>
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/stats.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="admin-layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <h2>📚 Biblioteca</h2>
+        <div class="sidebar-header">
 
-        <p id="usuarioLogado"></p>
+            <h2>📚 Biblioteca</h2>
+
+            <p id="usuarioLogado"></p>
+
+        </div>
 
         <nav class="menu">
 
@@ -30,75 +38,85 @@
             <button onclick="location.href='estatisticas.html'">Estatísticas</button>
             <button onclick="location.href='solicitacoes-exclusao.html'">Exclusões</button>
 
-            <button class="logout" onclick="location.href='login.html'">Sair</button>
+            <button class="logout" onclick="logout()">Sair</button>
 
         </nav>
 
     </aside>
 
-    <!-- CONTEÚDO -->
     <main class="main-content">
 
-        <h1>📊 Estatísticas da Biblioteca</h1>
-        <p class="subtext">Análise geral do sistema</p>
+        <div class="page-header">
 
-        <!-- GRID PRINCIPAL -->
+            <h1>📊 Estatísticas da Biblioteca</h1>
+
+            <p class="subtext">
+                Análise geral do sistema
+            </p>
+
+        </div>
+
         <div class="stats-grid">
 
             <section class="stats-card">
+
                 <h3>📚 Livros por Categoria</h3>
+
                 <div id="categorias"></div>
+
             </section>
 
             <section class="stats-card">
+
                 <h3>⭐ Top 5 Livros</h3>
+
                 <div id="avaliacoes"></div>
+
             </section>
 
             <section class="stats-card">
+
                 <h3>👥 Usuários por Status</h3>
+
                 <div id="usuariosStatus"></div>
+
             </section>
 
             <section class="stats-card">
-                <h3>📦 Total de Reservas</h3>
-                <div id="reservas"></div>
-            </section>
 
-            <section class="stats-card">
                 <h3>📦 Indicadores Gerais</h3>
-                <div id="reservas">
-                    <p>
-        Total de Empréstimos:
-        <strong id="totalEmprestimos">
-            0
-        </strong>
-    </p>
 
-    <p>
-        Total de Devoluções:
-        <strong id="totalDevolucoes">
-            0
-        </strong>
-    </p>
+                <p>
+                    Total de Empréstimos:
+                    <strong id="totalEmprestimos">0</strong>
+                </p>
 
-    <p>
-        Total de Avaliações:
-        <strong id="totalAvaliacoes">
-            0
-        </strong>
-    </p>
-                </div>
+                <p>
+                    Total de Devoluções:
+                    <strong id="totalDevolucoes">0</strong>
+                </p>
+
+                <p>
+                    Total de Avaliações:
+                    <strong id="totalAvaliacoes">0</strong>
+                </p>
+
             </section>
 
             <section class="stats-card">
-                <h3>📦 Livro Mais Emprestado</h3>
+
+                <h3>📖 Livro Mais Emprestado</h3>
+
                 <div id="maisEmprestado"></div>
+
             </section>
 
             <section class="stats-card">
-                <h3>📦 Livro Mais Reservado</h3>
+
+                <h3>📖 Livro Mais Reservado</h3>
+
                 <div id="maisReservado"></div>
+
             </section>
 
         </div>

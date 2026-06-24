@@ -14,11 +14,31 @@ async function carregarAuditoria() {
     logs.forEach(log => {
 
         div.innerHTML += `
-            <hr>
-            <p><strong>Ação:</strong> ${log.acao}</p>
-            <p><strong>Usuário:</strong> ${log.usuario}</p>
-            <p><strong>Detalhe:</strong> ${log.detalhe}</p>
-            <p><strong>Data:</strong> ${new Date(log.data).toLocaleString()}</p>
+
+        <div class="audit-card">
+
+            <div class="audit-header">
+
+                <h3>${log.acao}</h3>
+
+                <span>
+                    ${new Date(log.data).toLocaleString()}
+                </span>
+
+            </div>
+
+            <p>
+                <strong>Usuário:</strong>
+                ${log.usuario}
+            </p>
+
+            <p>
+                <strong>Detalhe:</strong>
+                ${log.detalhe}
+            </p>
+
+        </div>
+
         `;
     });
 
